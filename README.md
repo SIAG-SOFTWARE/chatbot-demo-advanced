@@ -1,88 +1,123 @@
-🧠 SIAG Software – Advanced Chatbot Demo
+# 🤖 SIAG Software – Advanced Chatbot Demo
 
-FastAPI + React + OpenAI API + Session Memory
+**FastAPI + React + OpenAI API + Session Memory**  
+Professional demo showcasing how SIAG Software builds modern, production-ready conversational systems.
 
-This repository showcases an advanced chatbot demo combining a modern backend (FastAPI) with a clean React frontend.
-It is designed as a professional example of how SIAG Software builds scalable, production-ready conversational systems for clients.
+---
 
-🚀 Features
+## 🚀 Features
 
-FastAPI backend (lightweight, async, production-ready)
+- **FastAPI backend** – async, lightweight, scalable  
+- **React + Vite frontend** – modern and fast  
+- **OpenAI ChatGPT API integration**  
+- **Session-based memory** (per visitor)  
+- **Clean project architecture** for real-world deployments  
+- **Config-based** (.env) for easy customization  
 
-React + Vite frontend (fast dev + modern architecture)
+---
 
-ChatGPT API integration (replaceable with any LLM provider)
+## 📁 Repository Structure
 
-Session-based memory (conversation persists per session)
+chatbot-demo-advanced/
+├── backend/
+│ ├── main.py
+│ ├── models.py
+│ ├── routers/
+│ │ └── chat.py
+│ ├── services/
+│ │ ├── ai_engine.py
+│ │ └── session_manager.py
+│ ├── utils/
+│ │ └── config.py
+│ ├── requirements.txt
+│ └── .env.example
+│
+├── frontend/
+│ ├── src/
+│ │ ├── App.jsx
+│ │ ├── ChatUI.jsx
+│ │ ├── api.js
+│ ├── public/
+│ ├── index.html
+│ ├── package.json
+│ └── vite.config.js
+│
+└── README.md
 
-Config-driven (.env system for API keys & settings)
+yaml
+Copiar código
 
-Full project structure showcasing real-world architecture
+---
 
-🛠️ Backend Setup (FastAPI)
-1. Install dependencies
-pip install -r requirements.txt
+## 🛠️ Backend Setup (FastAPI)
 
-2. Create .env
+**1. Install dependencies**
+```bash
+pip install -r backend/requirements.txt
+2. Create .env file
 
-Copy .env.example → .env and fill:
+bash
+Copiar código
+cp backend/.env.example backend/.env
+Fill with your values:
 
+ini
+Copiar código
 OPENAI_API_KEY=your_api_key_here
 MODEL=gpt-4.1-mini
 MAX_TOKENS=200
+3. Run backend
 
-3. Run the server
-uvicorn main:app --reload
-
-
+bash
+Copiar código
+uvicorn backend.main:app --reload
 Backend runs at:
-http://localhost:8000
+👉 http://localhost:8000
 
 🎨 Frontend Setup (React + Vite)
 1. Install dependencies
+
+bash
+Copiar código
+cd frontend
 npm install
+2. Start dev server
 
-2. Run dev server
+bash
+Copiar código
 npm run dev
-
-
 Frontend runs at:
-http://localhost:5173
+👉 http://localhost:5173
+(Backend must be running first.)
 
-Make sure backend is running first.
-
-🔌 API Endpoint (Backend → Frontend)
-
+🔌 API Endpoint
 POST /chat
 
 Request:
 
-{
-  "message": "Hello"
-}
-
-
+json
+Copiar código
+{ "message": "Hello" }
 Response:
 
-{
-  "reply": "Hello! How can I help you today?"
-}
-
+json
+Copiar código
+{ "reply": "Hello! How can I help you today?" }
 🧬 Session Memory
+Each visitor gets a unique session token.
+Memory is stored in lightweight in-memory buffers:
 
-Each visitor receives a unique session ID.
-Memory is stored in a lightweight in-memory dictionary for demo purposes:
+remembers past messages
 
-remembers previous messages
+keeps short context
 
-preserves context
+resets automatically after inactivity
 
-resets automatically if inactive
-
-(Production-ready version can use Redis / Supabase / DB.)
+Production-ready deployments can switch to Redis/Supabase/DB with no code changes.
 
 📦 Tech Stack
 Backend
+Python 3.10+
 
 FastAPI
 
@@ -92,32 +127,27 @@ Pydantic
 
 OpenAI API
 
-Python 3.10+
-
 Frontend
-
 React
 
 Vite
 
 Fetch API
 
-Modern functional components
-
 📘 License — MIT
 MIT License
-
 Copyright (c) 2025 SIAG Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files...
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software...
 
-
-(Include full MIT text in the repo.)
+(Full MIT text included in the repository.)
 
 🌐 About SIAG Software
-
 SIAG Software builds AI-driven tools, workflow automation, chatbots, and custom full-stack solutions for modern businesses.
 
-Website coming soon.
+Website: coming soon
 Contact: siag.software@protonmail.com
