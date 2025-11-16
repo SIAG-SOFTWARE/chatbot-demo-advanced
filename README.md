@@ -19,34 +19,6 @@ Config-driven (.env system for API keys & settings)
 
 Full project structure showcasing real-world architecture
 
-📁 Repository Structure
-chatbot-demo-advanced/
-│
-├── backend/
-│   ├── main.py
-│   ├── models.py
-│   ├── routers/
-│   │   └── chat.py
-│   ├── services/
-│   │   ├── ai_engine.py
-│   │   └── session_manager.py
-│   ├── utils/
-│   │   └── config.py
-│   ├── requirements.txt
-│   └── .env.example
-│
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── ChatUI.jsx
-│   │   ├── api.js
-│   ├── public/
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-│
-└── README.md
-
 🛠️ Backend Setup (FastAPI)
 1. Install dependencies
 pip install -r requirements.txt
