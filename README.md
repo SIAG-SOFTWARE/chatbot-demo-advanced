@@ -35,36 +35,32 @@ Each user gets a unique session ID that preserves conversation context.
 - No vendor lock-in
 
 ---
-
-## 📁 Repository Structure
-
 chatbot-demo-advanced/
 │
 ├── backend/
-│ ├── main.py
-│ ├── models.py
-│ ├── routers/
-│ │ └── chat.py
-│ ├── services/
-│ │ ├── ai_engine.py
-│ │ └── session_manager.py
-│ ├── utils/
-│ │ └── config.py
-│ ├── requirements.txt
-│ └── .env.example
+│   ├── main.py
+│   ├── models.py
+│   ├── routers/
+│   │   └── chat.py
+│   ├── services/
+│   │   ├── ai_engine.py
+│   │   └── session_manager.py
+│   ├── utils/
+│   │   └── config.py
+│   ├── requirements.txt
+│   └── .env.example
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── App.jsx
-│ │ ├── ChatUI.jsx
-│ │ ├── api.js
-│ ├── public/
-│ ├── index.html
-│ ├── package.json
-│ └── vite.config.js
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── ChatUI.jsx
+│   │   ├── api.js
+│   ├── public/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
 │
 └── README.md
-
 ---
 
 ## ⚙️ Backend Setup (FastAPI)
