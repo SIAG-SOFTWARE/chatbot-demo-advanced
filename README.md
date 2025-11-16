@@ -65,9 +65,6 @@ chatbot-demo-advanced/
 │
 └── README.md
 
-yaml
-Copiar código
-
 ---
 
 ## ⚙️ Backend Setup (FastAPI)
