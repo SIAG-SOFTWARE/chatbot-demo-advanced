@@ -1,41 +1,25 @@
-# 🤖 SIAG Software – Advanced AI Chatbot Demo  
-**FastAPI + React + ChatGPT API + Session Memory**
+🧠 SIAG Software – Advanced Chatbot Demo
 
-This repository showcases a **professional-grade chatbot architecture**, designed as a demonstration of how SIAG Software builds real, scalable AI products for clients.
+FastAPI + React + OpenAI API + Session Memory
 
-It includes:
+This repository showcases an advanced chatbot demo combining a modern backend (FastAPI) with a clean React frontend.
+It is designed as a professional example of how SIAG Software builds scalable, production-ready conversational systems for clients.
 
-- Full-stack implementation (FastAPI backend + React/Vite frontend)  
-- Real ChatGPT API integration  
-- Session-based memory (context persists per user)  
-- Clean, modern UI  
-- Modular, production-oriented code structure  
-- Environment-based configuration (secure API key handling)
+🚀 Features
 
----
+FastAPI backend (lightweight, async, production-ready)
 
-## 🚀 Features
+React + Vite frontend (fast dev + modern architecture)
 
-### ✅ **Real AI Integration**
-The backend communicates directly with the **OpenAI ChatGPT API**.  
-Clients can plug in *their own API keys* without modifying the code.
+ChatGPT API integration (replaceable with any LLM provider)
 
-### ✅ **Session Memory**
-Each user gets a unique session ID that preserves conversation context.
+Session-based memory (conversation persists per session)
 
-### ✅ **Modern Tech Stack**
-- **Backend:** FastAPI, Uvicorn, httpx  
-- **Frontend:** React + Vite  
-- **CORS enabled**  
-- Clean folder organization
+Config-driven (.env system for API keys & settings)
 
-### ✅ **Easy to Deploy**
-- Works locally out of the box  
-- Ready for Render / Railway / Docker / VPS / Nginx  
-- No vendor lock-in
+Full project structure showcasing real-world architecture
 
----
-
+📁 Repository Structure
 chatbot-demo-advanced/
 │
 ├── backend/
@@ -63,89 +47,105 @@ chatbot-demo-advanced/
 │
 └── README.md
 
----
-
-## ⚙️ Backend Setup (FastAPI)
-
-### 1. Install dependencies
-
-```bash
-cd backend
+🛠️ Backend Setup (FastAPI)
+1. Install dependencies
 pip install -r requirements.txt
-2. Create .env file
-ini
-Copiar código
-OPENAI_API_KEY=your_api_key_here
-3. Run the server
-bash
-Copiar código
-uvicorn main:app --reload --port 8000
-Backend will be available at:
 
-arduino
-Copiar código
+2. Create .env
+
+Copy .env.example → .env and fill:
+
+OPENAI_API_KEY=your_api_key_here
+MODEL=gpt-4.1-mini
+MAX_TOKENS=200
+
+3. Run the server
+uvicorn main:app --reload
+
+
+Backend runs at:
 http://localhost:8000
+
 🎨 Frontend Setup (React + Vite)
 1. Install dependencies
-bash
-Copiar código
-cd frontend
 npm install
-2. Start development server
-bash
-Copiar código
+
+2. Run dev server
 npm run dev
-Frontend will run on:
 
-arduino
-Copiar código
+
+Frontend runs at:
 http://localhost:5173
-🔌 Connecting Frontend ↔ Backend
-By default, the frontend expects the backend on:
 
-bash
-Copiar código
-http://localhost:8000/chat
-Both tools automatically work together in dev mode.
+Make sure backend is running first.
 
-🧠 About Session Memory
-Each chat session stores the last 5 messages:
+🔌 API Endpoint (Backend → Frontend)
 
-User messages
+POST /chat
 
-AI replies
+Request:
 
-This provides contextual continuity without using a database.
+{
+  "message": "Hello"
+}
 
-Memory resets when the backend restarts (demo-friendly).
 
-🛡 Environment & Security
-No API keys stored in frontend
+Response:
 
-.env file excluded via .gitignore
+{
+  "reply": "Hello! How can I help you today?"
+}
 
-OpenAI key stays server-side
+🧬 Session Memory
 
-Safe for client demos
+Each visitor receives a unique session ID.
+Memory is stored in a lightweight in-memory dictionary for demo purposes:
 
-🏢 About SIAG Software
-SIAG Software builds pragmatic and scalable software solutions including:
+remembers previous messages
 
-AI Business Chatbots
+preserves context
 
-Workflow Automation (n8n / Make / API integrations)
+resets automatically if inactive
 
-Custom Web Scrapers
+(Production-ready version can use Redis / Supabase / DB.)
 
-Full-Stack Web Applications
+📦 Tech Stack
+Backend
 
-🌐 Website: coming soon
-📩 Contact: siag.software@protonmail.com
+FastAPI
 
-📜 License
-MIT License — Free to use for learning and demos.
-For commercial implementation and consulting, contact SIAG Software.
+Uvicorn
 
-✨ Author
-Developed by SIAG Software
-“Automation + Intelligence = SIAG Software”
+Pydantic
+
+OpenAI API
+
+Python 3.10+
+
+Frontend
+
+React
+
+Vite
+
+Fetch API
+
+Modern functional components
+
+📘 License — MIT
+MIT License
+
+Copyright (c) 2025 SIAG Software
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files...
+
+
+(Include full MIT text in the repo.)
+
+🌐 About SIAG Software
+
+SIAG Software builds AI-driven tools, workflow automation, chatbots, and custom full-stack solutions for modern businesses.
+
+Website coming soon.
+Contact: siag.software@protonmail.com
