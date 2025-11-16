@@ -16,39 +16,6 @@ Professional demo showcasing how SIAG Software builds modern, production-ready c
 
 ---
 
-## 📁 Repository Structure
-
-chatbot-demo-advanced/
-├── backend/
-│ ├── main.py
-│ ├── models.py
-│ ├── routers/
-│ │ └── chat.py
-│ ├── services/
-│ │ ├── ai_engine.py
-│ │ └── session_manager.py
-│ ├── utils/
-│ │ └── config.py
-│ ├── requirements.txt
-│ └── .env.example
-│
-├── frontend/
-│ ├── src/
-│ │ ├── App.jsx
-│ │ ├── ChatUI.jsx
-│ │ ├── api.js
-│ ├── public/
-│ ├── index.html
-│ ├── package.json
-│ └── vite.config.js
-│
-└── README.md
-
-yaml
-Copiar código
-
----
-
 ## 🛠️ Backend Setup (FastAPI)
 
 **1. Install dependencies**
