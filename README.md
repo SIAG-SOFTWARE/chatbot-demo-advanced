@@ -35,6 +35,7 @@ Each user gets a unique session ID that preserves conversation context.
 - No vendor lock-in
 
 ---
+
 chatbot-demo-advanced/
 │
 ├── backend/
@@ -61,6 +62,7 @@ chatbot-demo-advanced/
 │   └── vite.config.js
 │
 └── README.md
+
 ---
 
 ## ⚙️ Backend Setup (FastAPI)
