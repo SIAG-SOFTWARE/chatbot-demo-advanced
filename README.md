@@ -1,132 +1,151 @@
-🤖 SIAG Software — Advanced Chatbot Demo
+🧠 SIAG Software – Advanced Chatbot Demo
 
-FastAPI + React + ChatGPT API + Session Memory
+FastAPI + React + OpenAI API + Session Memory
 
-A production-ready example showcasing how SIAG Software builds modern AI chatbots with clean architecture, modular services, and real LLM integration.
-
-This demo shows:
-✔ FastAPI backend with ChatGPT API
-✔ React frontend with live chat
-✔ Session-based short-term memory
-✔ Clear folder structure for scaling into enterprise apps
+This repository showcases an advanced chatbot demo combining a modern backend (FastAPI) with a clean React frontend.
+It is designed as a professional example of how SIAG Software builds scalable, production-ready conversational systems for clients.
 
 🚀 Features
-Backend (FastAPI)
 
-Clean router separation (/chat)
+FastAPI backend (lightweight, async, production-ready)
 
-AI engine service using OpenAI ChatGPT API
+React + Vite frontend (fast dev + modern architecture)
 
-Simple session memory stored server-side
+ChatGPT API integration (replaceable with any LLM provider)
 
-Environment-based configuration (.env)
+Session-based memory (conversation persists per session)
 
-Frontend (React + Vite)
+Config-driven (.env system for API keys & settings)
 
-Clean minimal UI
+Full project structure showcasing real-world architecture
 
-Real-time chat messages
+📁 Repository Structure
+chatbot-demo-advanced/
+│
+├── backend/
+│   ├── main.py
+│   ├── models.py
+│   ├── routers/
+│   │   └── chat.py
+│   ├── services/
+│   │   ├── ai_engine.py
+│   │   └── session_manager.py
+│   ├── utils/
+│   │   └── config.py
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── ChatUI.jsx
+│   │   ├── api.js
+│   ├── public/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
 
-API helper for clean requests
-
-Fully portable to any website or mobile app
-
-🔧 Backend – Installation & Run
+🛠️ Backend Setup (FastAPI)
 1. Install dependencies
-cd backend
 pip install -r requirements.txt
 
-2. Configure environment
+2. Create .env
 
-Create .env from .env.example:
+Copy .env.example → .env and fill:
 
 OPENAI_API_KEY=your_api_key_here
-MODEL=gpt-4o-mini
-MEMORY_TTL=300
+MODEL=gpt-4.1-mini
+MAX_TOKENS=200
 
-3. Run the API
-uvicorn main:app --reload --port 8000
+3. Run the server
+uvicorn main:app --reload
 
 
 Backend runs at:
-👉 http://localhost:8000
+http://localhost:8000
 
-💻 Frontend – Installation & Run
+🎨 Frontend Setup (React + Vite)
 1. Install dependencies
-cd frontend
 npm install
 
-2. Start Vite dev server
+2. Run dev server
 npm run dev
 
 
 Frontend runs at:
-👉 http://localhost:5173
+http://localhost:5173
 
-🔗 How It Works
-Message Flow
+Make sure backend is running first.
 
-User sends message (React)
+🔌 API Endpoint (Backend → Frontend)
 
-Frontend → FastAPI (POST /chat)
-
-Backend:
-
-Stores message in session memory
-
-Sends conversation context to ChatGPT
-
-Returns AI answer
-
-Frontend displays response
-
-Memory Engine
-
-Session memory is lightweight and designed for demos:
-
-Stores last N messages
-
-Auto-expires with TTL
-
-Can be upgraded to Redis / DB easily
-
-🧪 Example Request (Backend)
 POST /chat
+
+Request:
+
 {
-  "session_id": "abc123",
-  "message": "Hello chatbot!"
+  "message": "Hello"
 }
 
-🔐 Environment Variables
-Variable	Description
-OPENAI_API_KEY	ChatGPT API key
-MODEL	GPT model to use
-MEMORY_TTL	Memory expiration time
-📦 Production Deployment
 
-This project supports deployment to:
+Response:
 
-Docker
+{
+  "reply": "Hello! How can I help you today?"
+}
 
-Railway
+🧬 Session Memory
 
-Render
+Each visitor receives a unique session ID.
+Memory is stored in a lightweight in-memory dictionary for demo purposes:
 
-AWS Lambda
+remembers previous messages
 
-Netlify (frontend)
+preserves context
 
-If you want, I can prepare:
-✔ Dockerfile
-✔ docker-compose
-✔ Production env templates
-✔ Deploy scripts
+resets automatically if inactive
 
-📄 License
+(Production-ready version can use Redis / Supabase / DB.)
 
-MIT License — free for commercial & personal use.
+📦 Tech Stack
+Backend
 
-👨‍💻 Created by SIAG Software
+FastAPI
 
-AI Automation • Chatbots • Full-stack Development
-https://github.com/SIAG-SOFTWARE
+Uvicorn
+
+Pydantic
+
+OpenAI API
+
+Python 3.10+
+
+Frontend
+
+React
+
+Vite
+
+Fetch API
+
+Modern functional components
+
+📘 License — MIT
+MIT License
+
+Copyright (c) 2025 SIAG Software
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files...
+
+
+(Include full MIT text in the repo.)
+
+🌐 About SIAG Software
+
+SIAG Software builds AI-driven tools, workflow automation, chatbots, and custom full-stack solutions for modern businesses.
+
+Website coming soon.
+Contact: siag.software@protonmail.com
